@@ -13,7 +13,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', to: '/' },
     { name: 'About Us', to: '/services' },
-    { name: 'Conditions We Treat', to: '/about' },
+    { name: 'Conditions We Treat', to: '/condition_we_treate' },
     { name: 'Our Services', to: '/contact' },
     { name: 'Our Team', to: '/contact' },
     { name: 'Testimonials', to: '/contact' },

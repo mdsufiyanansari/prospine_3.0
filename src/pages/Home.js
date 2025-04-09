@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-50">
+    <div className="min-h-screen flex items-center justify-center bg-blue-50 mt-16">
       <div className="max-w-4xl mx-auto h-full flex flex-col md:flex-row items-center">
         <motion.div 
           className="w-full md:w-1/2 h-full p-1 order-2 md:order-1 "

@@ -6,6 +6,7 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Appointment from './pages/Appointment';
+import Condition_we_treate from './pages/Condition_we_treate';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/appointment" element={<Appointment />} />
+            <Route path="/condition_we_treate" element={<Condition_we_treate />} />
           </Routes>
         </main>
       </div>
