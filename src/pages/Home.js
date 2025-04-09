@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 const Home = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-blue-50">
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center">
+      <div className="max-w-4xl mx-auto h-full flex flex-col md:flex-row items-center">
         <motion.div 
-          className="w-full md:w-1/2 h-full p-1 order-2 md:order-1 bg-red-500"
+          className="w-full md:w-1/2 h-full p-1 order-2 md:order-1 "
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -27,7 +27,7 @@ const Home = () => {
           </div>
         </motion.div>
         <motion.div 
-          className="w-full md:w-1/2 h-full p-1 order-1 md:order-2 bg-green-500"
+          className="w-full md:w-1/2 h-screen p-1 order-1 md:order-2 bg-green-500 flex items-center justify-center"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
