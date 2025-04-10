@@ -1,42 +1,70 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { PlayCircle } from 'lucide-react';
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-50 mt-16">
-      <div className="max-w-4xl mx-auto h-full flex flex-col md:flex-row items-center">
-        <motion.div 
-          className="w-full md:w-1/2 h-full p-1 order-2 md:order-1 "
-          initial={{ opacity: 0, x: -50 }}
+    <div className="relative min-h-screen mt-16 overflow-hidden bg-white flex items-center justify-center">
+
+      {/* Background Image */}
+      <div className="absolute inset-0 bg-[url('https://www.eurospine.org/fileadmin/_processed_/5/5/csm_EUROSPINE-JSSR_travelling_fellowship_programme_2025TYPO_3_-_Hero_Image_216_62f38b6a1f.png')] bg-cover bg-center opacity-25 z-0 w-full"></div>
+
+      {/* White Overlay with blur for softness */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-sm z-0"></div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl w-full px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+        {/* Text Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="space-y-6 "
         >
-          <h1 className="text-6xl font-bold text-blue-600 mb-4">Medical & Health Care Services</h1>
-          <p className="text-lg text-gray-700 mb-6">Your health is our top priority. Schedule an appointment with us today.</p>
-          <div className="flex space-x-4">
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300">
-              Read More
+          <div>
+            <h1 className="text-54xl md:text-5xl lg:text-8xl font-extrabold text-blue-800">
+              Medical & Health Care
+            </h1>
+            <h2 className="text-4xl md:text-5xl lg:text-8xl font-extrabold bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-500 text-transparent bg-clip-text mt-1">
+              Services
+            </h2>
+          </div>
+
+          <p className="text-xl text-gray-700">
+            Get top-notch healthcare solutions tailored to your needs. Your health is our mission—book your appointment now.
+          </p>
+
+          <div className="flex flex-wrap gap-4 pt-4">
+            {/* Glassy Read More Button */}
+            <button className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 group hover:brightness-110">
+              <span className="relative z-10">Read More</span>
+              <span className="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 blur-md transition duration-700 transform group-hover:translate-x-full translate-x-[-100%] rotate-12"></span>
             </button>
-            <button className="flex items-center text-blue-600 hover:text-blue-700 transition duration-300">
-              <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.868v4.264a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"></path>
-              </svg>
+
+            {/* Watch Now Button */}
+            <button className="flex items-center gap-2 text-blue-700 hover:text-blue-800 font-medium transition">
+              <PlayCircle className="w-6 h-6" />
               Watch Now
             </button>
           </div>
         </motion.div>
-        <motion.div 
-          className="w-full md:w-1/2 h-screen p-1 order-1 md:order-2 bg-green-500 flex items-center justify-center"
-          initial={{ opacity: 0, x: 50 }}
+
+        {/* Image */}
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-center   "
         >
-          <img src="https://png.pngtree.com/png-clipart/20230913/original/pngtree-chiropractor-clipart-doctor-with-a-spinal-skeleton-cartoon-vector-png-image_11071920.png" alt="Doctor" className="w-full rounded-lg shadow-md" />
+          <img
+            src="https://medserg.com/wp-content/uploads/2022/05/cs.png"
+            className="w-full max-w-md md:max-w-3xl object-contain  "
+          />
         </motion.div>
       </div>
     </div>
   );
 };
 
-export default Home; 
+export default Home;

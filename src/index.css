@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-cursor {
+    cursor: none;
+  }
+  
+  .cursor-dot {
+    width: 10px;
+    height: 10px;
+    background: #2563eb;
+    border-radius: 9999px;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: background 0.2s ease;
+  }
+  
+  .cursor-ring {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #2563eb;
+    border-radius: 9999px;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: all 0.15s ease;
+  }
+  
+  .bubble {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: rgba(37, 99, 235, 0.3);
+    border: 1px solid rgba(37, 99, 235, 0.4);
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    animation: pop 0.5s ease-out forwards;
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(3.5);
+      opacity: 0;
+    }
+  }
+  

@@ -7,11 +7,16 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Appointment from './pages/Appointment';
 import Condition_we_treate from './pages/Condition_we_treate';
+import Custome_cursor from './cursor/Custome_cursor';
+
 
 function App() {
+  
   return (
     <Router>
       <div className="min-h-screen bg-gray-50">
+        <Custome_cursor />
+        
         <Navbar />
         <main>
           <Routes>
