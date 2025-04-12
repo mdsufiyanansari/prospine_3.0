@@ -17,7 +17,7 @@ const Navbar = () => {
     { name: 'Conditions We Treat', to: '/condition_we_treate' },
     { name: 'Our Services', to: '/contact' },
     { name: 'Our Team', to: '/contact' },
-    { name: 'Testimonials', to: '/contact' },
+    { name: 'Testimonials', to: '/testimonials' },
     { name: 'Events', to: '/contact' },
     { name: 'Why Pro Spine', to: '/contact' },
     { name: 'Career', to: '/contact' },

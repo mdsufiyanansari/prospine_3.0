@@ -117,9 +117,9 @@ export default function ConditionsWeTreat() {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 py-24 px-6">
+    <section className="min-h-screen bg-white py-24 px-6">
       <div className="text-center mb-20">
-        <h2 className="text-5xl font-bold text-blue-900 drop-shadow-lg">
+        <h2 className="text-5xl font-bold text-cyan-600 drop-shadow-lg">
           Conditions We Treat
         </h2>
         <p className="mt-4 text-gray-600 max-w-xl mx-auto text-lg">
@@ -135,7 +135,7 @@ export default function ConditionsWeTreat() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.06 }}
             viewport={{ once: true }}
-            className="backdrop-blur-xl bg-white/70 rounded-3xl shadow-2xl border border-blue-100 p-6 hover:shadow-blue-200 transition-all duration-300"
+            className="backdrop-blur-xl bg-white/70 rounded-3xl shadow-2xl border border-cyan-200 p-6 hover:shadow-cyan-200 transition-all duration-300"
           >
             <div className="overflow-hidden rounded-2xl mb-5">
               <img
@@ -144,7 +144,7 @@ export default function ConditionsWeTreat() {
                 className="w-full h-48 object-cover rounded-2xl hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <div className="flex items-center gap-3 mb-3 text-blue-700 text-xl font-semibold">
+            <div className="flex items-center gap-3 mb-3 text-cyan-600 text-xl font-semibold">
               <FaHeartbeat className="text-2xl" />
               <h3>{cond.title}</h3>
             </div>
@@ -153,7 +153,7 @@ export default function ConditionsWeTreat() {
             </p>
             <button
               onClick={() => setSelected(cond)}
-              className="mt-4 w-full py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition duration-200 text-base font-semibold"
+              className="mt-4 w-full py-3 bg-cyan-500 text-white rounded-xl hover:bg-cyan-600 transition duration-200 text-base font-semibold"
             >
               More
             </button>
@@ -178,7 +178,7 @@ export default function ConditionsWeTreat() {
               transition={{ duration: 0.3 }}
             >
               {/* Header */}
-              <div className="bg-gradient-to-r from-blue-600 to-blue-500 text-white p-6 flex items-center gap-3">
+              <div className="bg-gradient-to-r from-cyan-500 to-cyan-400 text-white p-6 flex items-center gap-3">
                 <FaHeartbeat className="text-3xl" />
                 <h3 className="text-2xl font-bold">{selected.title}</h3>
                 <motion.button
@@ -191,7 +191,7 @@ export default function ConditionsWeTreat() {
               </div>
 
               {/* Content */}
-              <div className="p-6 max-h-[75vh] overflow-y-auto scrollbar-thin scrollbar-thumb-blue-300 scrollbar-track-blue-100">
+              <div className="p-6 max-h-[75vh] overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-300 scrollbar-track-cyan-100">
                 <img
                   src={selected.image}
                   alt={selected.title}
@@ -204,7 +204,7 @@ export default function ConditionsWeTreat() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => setSelected(null)}
-                      className="mt-6 w-4/5 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition duration-200 text-base font-semibold"
+                      className="mt-6 w-4/5 py-3 bg-cyan-500 text-white rounded-xl hover:bg-cyan-600 transition duration-200 text-base font-semibold"
                     >
                       OK
                     </motion.button>
