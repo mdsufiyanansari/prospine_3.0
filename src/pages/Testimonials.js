@@ -277,7 +277,7 @@ const TestimonialHeader = () => {
       <ChevronLeft className="w-6 h-6 md:w-8  md:h-8 text-gray-800" />
     </button>
 
-    {/* Card Container */}
+    {/* Card Container*/}
     <div
       ref={containerRef}
       className="w-full md:w-[90%] h-full  overflow-hidden relative flex scroll-smooth  md:flex"
