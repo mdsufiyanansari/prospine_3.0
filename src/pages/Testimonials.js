@@ -253,78 +253,77 @@ const TestimonialHeader = () => {
     </div>
 
     {/* Real Patients Section */}
-    <div className="h-[700px] w-full p-1 bg-red-600 relative center">
-      
-      <img src="https://img.freepik.com/free-vector/medical-technology-science-background-vector-blue-with-blank-space_53876-117739.jpg" alt="background" className="object-cover h-full w-full bg-no-repeat " />
-
-      <div className="bg-red-600  bottom-0 justify-around h-full w-[95%] flex absolute ">
-      <div className="w-1/2 h-full relative flex items-center justify-center bg-blue-300 overflow-hidden">
-  {/* First Orbit Ring */}
-  <div className="orbit-ring bottom-16 left-[150px] absolute z-0">
-    <div className="orbit-dot"></div>
-    <div className="orbit-dot-third"></div>
-  </div>
-
-  {/* Second Orbit Ring with two orbit dots */}
-  <div className="orbit-ring-reverse top-20 right-52 absolute z-0">
-    <div className="orbit-dot-large"></div>
-    <div className="orbit-dot-third"></div> {/* Third orbiting dot */}
-  </div>
-
-  {/* Doctor Image */}
+    <div className="h-[700px] w-full p-1  relative center">
   <img
-    src="https://static.wixstatic.com/media/62aad1_37f3ef2a7f114a3d9b36c84ec9dde792~mv2.png/v1/crop/x_0,y_0,w_2703,h_3023/fill/w_560,h_626,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Doctor%20banner%20image.png"
-    alt="doctor"
-    className="h-full z-10 relative "
-    
+    src="https://img.freepik.com/free-vector/medical-technology-science-background-vector-blue-with-blank-space_53876-117739.jpg"
+    alt="background"
+    className="object-cover h-full w-full bg-no-repeat"
   />
-   <motion.div
-  className="flex bottom-20 left-28 items-center absolute z-50 bg-white shadow-md rounded-full px-4 py-2 space-x-3 w-fit"
-  animate={{
-    x: [0, -10, 10, -10, 0],
-    y: [0, -5, 5, -5, 0],
-  }}
-  transition={{
-    duration: 3,
-    repeat: Infinity,
-    repeatType: "loop",
-    ease: "easeInOut",
-  }}
->
-  {/* Avatars */}
-  <div className="flex -space-x-3">
-    {["./images/girl.avif", "./images/girl.avif", "./images/girl.avif", "./images/girl.avif"].map((src, idx) => (
-      <img
-        key={idx}
-        src={src}
-        alt="user"
-        className="w-8 h-8 rounded-full border-2 border-white"
-      />
-    ))}
-  </div>
 
-  {/* Stats */}
-  <div className="text-sm">
-    <div className="text-cyan-600 font-bold text-base">10.2k</div>
-    <div className="text-gray-500 font-medium">Patient recovers</div>
+  <div className=" bottom-0 justify-around h-full w-[95%] flex flex-col lg:flex-row absolute">
+    {/* Left - Doctor + Animation */}
+    <div className="w-full lg:w-1/2 h-1/2 lg:h-full relative flex items-center justify-center  overflow-hidden">
+      {/* Orbit Rings */}
+      <div className="orbit-ring bottom-16 left-[150px] absolute z-0">
+        <div className="orbit-dot"></div>
+        <div className="orbit-dot-third"></div>
+      </div>
+
+      <div className="orbit-ring-reverse top-20 right-20 lg:right-52 absolute z-0">
+        <div className="orbit-dot-large"></div>
+        <div className="orbit-dot-third"></div>
+      </div>
+
+      {/* Doctor Image */}
+      <img
+        src="https://static.wixstatic.com/media/62aad1_37f3ef2a7f114a3d9b36c84ec9dde792~mv2.png/v1/crop/x_0,y_0,w_2703,h_3023/fill/w_560,h_626,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Doctor%20banner%20image.png"
+        alt="doctor"
+        className="h-full z-10 relative object-contain"
+      />
+
+      {/* Animated Stat */}
+      <motion.div
+        className="flex bottom-20 left-10 md:left-28 items-center absolute z-50 bg-white shadow-md rounded-full px-4 py-2 space-x-3 w-fit"
+        animate={{
+          x: [0, -10, 10, -10, 0],
+          y: [0, -5, 5, -5, 0],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "easeInOut",
+        }}
+      >
+        <div className="flex -space-x-3">
+          {["./images/girl.avif", "./images/girl.avif", "./images/girl.avif", "./images/girl.avif"].map((src, idx) => (
+            <img
+              key={idx}
+              src={src}
+              alt="user"
+              className="w-8 h-8 rounded-full border-2 border-white"
+            />
+          ))}
+        </div>
+        <div className="text-sm">
+          <div className="text-cyan-600 font-bold text-base">10.2k</div>
+          <div className="text-gray-500 font-medium">Patient recovers</div>
+        </div>
+      </motion.div>
+    </div>
+
+    {/* Right - Text Section */}
+    <div className="w-full lg:w-1/2 h-1/2 lg:h-full center tracking-wider  px-4 text-center lg:text-left flex items-center justify-center">
+      <h1 className="text-lg md:text-xl text-cyan-400 font-semibold">
+        Testimonials <br />
+        <span className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white">
+          Real Patients, Real Stories. <br /> And our achievements
+        </span>
+      </h1>
+    </div>
   </div>
-</motion.div>
-  
 </div>
 
-
-
-        
-        <div className="w-1/2 center  h-full tracking-wider  bg-blue-600">
-        <h1 className="text-xl  text-cyan-400 font-semibold"> Testimonials <br  />
-        <span className="text-5xl  font-extrabold text-white">Real Patients, Real Stories. <br /> And our achievements</span>
-        </h1>
-        </div>
-
-         </div>
-      
-
-    </div>
     </>
   );
 };
