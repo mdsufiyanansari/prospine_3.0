@@ -94,8 +94,9 @@ const TestimonialHeader = () => {
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % cards.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
     }, 3000);
+
     return () => clearInterval(slideInterval);
   }, []);
 
@@ -103,24 +104,21 @@ const TestimonialHeader = () => {
     const container = containerRef.current;
     if (!container) return;
 
-    const timeout = setTimeout(() => {
-      container.scrollTo({
-        left: currentIndex * container.offsetWidth,
-        behavior: "smooth",
-      });
-    }, 50);
-
-    return () => clearTimeout(timeout);
+    container.scrollTo({
+      left: currentIndex * container.offsetWidth,
+      behavior: "smooth",
+    });
   }, [currentIndex]);
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + cards.length) % cards.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % cards.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
   };
 
+   
   return (
     <>
       {/* Banner */}
@@ -195,65 +193,10 @@ const TestimonialHeader = () => {
   </div>
 </div>
 
-      {/* Video Testimonial Slider */}
-      <div className="w-full h-[750px]  flex justify-center  relative px-4 center">
-      <div ref={containerRef} className="w-full py-2 md:w-[80%] overflow-hidden relative h-[85%] flex scroll-smooth">
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="flex flex-col md:flex-row flex-shrink-0 w-full bg-white rounded-xl shadow-lg overflow-hidden"
-          >
-            {/* Image */}
-            <div className="w-full md:w-1/2 h-[250px] md:h-auto">
-              <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
-            </div>
-
-            {/* Text */}
-            <div className="w-full md:w-1/2 p-6 flex flex-col justify-center items-center md:items-start space-y-8 bg-gray-100 relative text-center md:text-left">
-              <Quote className="absolute text-[250px] h-40 w-40 text-cyan-200 opacity-50 right-10 bottom-[-40px] transform -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none" />
-              <div className="flex gap-2 mb-3 z-10 justify-center md:justify-start">
-                <BiShieldPlus className="text-red-500 text-2xl mt-1" />
-                <div className="space-y-4">
-                  <h1 className="text-cyan-300 text-xl font-bold">Testimonials</h1>
-                  <h1 className="text-3xl md:text-5xl text-gray-950 font-extrabold">Video Testimonials</h1>
-                </div>
-              </div>
-              <h2 className="text-2xl font-bold flex items-center justify-center md:justify-start gap-2 z-10">
-                <FaQuoteLeft className="w-14 h-14 text-white bg-cyan-400 p-3 rounded-full" />
-                {card.title}
-              </h2>
-              <p className="text-gray-600 text-lg z-10 px-4 md:px-0">{card.description}</p>
-
-              {/* Person Info */}
-              <div className="w-full flex justify-center md:justify-start">
-                <div className="mt-6 flex items-center gap-4 p-4 rounded-2xl">
-                  <div className="w-20 h-20 rounded-full overflow-hidden shadow-md">
-                    <img src={card.image} alt={card.name} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left">
-                    <h3 className="text-xl font-bold text-blue-900">{card.name}</h3>
-                    <p className="text-cyan-600 font-medium">{card.role}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Arrows */}
-      <div className="absolute bottom-[100px] right-6 md:bottom-60 md:right-60 flex gap-4 z-10">
-        <button onClick={handlePrev} className="bg-transparent hover:bg-cyan-500 duration-1000 p-3 text-black rounded-md">
-          <ChevronLeft className="w-10 h-10" />
-        </button>
-        <button onClick={handleNext} className="bg-transparent hover:bg-cyan-500 p-3 text-black duration-1000 rounded-md">
-          <ChevronRight className="w-10 h-10" />
-        </button>
-      </div>
-    </div>
+   
 
     {/* Real Patients Section */}
-    <div className="h-[700px] w-full p-1  relative center">
+    <div className="h-[1500px] md:h-[700px] w-full p-1  relative center">
   <img
     src="https://img.freepik.com/free-vector/medical-technology-science-background-vector-blue-with-blank-space_53876-117739.jpg"
     alt="background"
@@ -313,14 +256,72 @@ const TestimonialHeader = () => {
     </div>
 
     {/* Right - Text Section */}
-    <div className="w-full lg:w-1/2 h-1/2 lg:h-full center tracking-wider  px-4 text-center lg:text-left flex items-center justify-center">
-      <h1 className="text-lg md:text-xl text-cyan-400 font-semibold">
-        Testimonials <br />
-        <span className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white">
-          Real Patients, Real Stories. <br /> And our achievements
-        </span>
-      </h1>
+    <div className="w-full lg:w-1/2 h-1/2 lg:h-full center tracking-wider px-4 text-center lg:text-left flex-col items-center justify-center">
+  <h1 className="text-lg mt-20  md:text-xl text-cyan-400 font-semibold">
+    <div className="flex gap-1">
+      <BiShieldPlus className="text-red-500 font-extrabold mt-1" />
+      Testimonials <br />
     </div>
+    <span className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white">
+      Real Patients, Real Stories. <br /> And our achievements
+    </span>
+  </h1>
+
+  {/* Card slide section */}
+  <div className="w-full h-[65%] flex items-center justify-center relative p-4 md:p-8">
+    {/* Left Arrow */}
+    <button
+      onClick={handlePrev}
+      className="absolute left-2  md:left-4 z-20 bg-white/30 hover:bg-cyan-500 transition-all duration-500 p-2 rounded-full shadow-md backdrop-blur-sm"
+    >
+      <ChevronLeft className="w-6 h-6 md:w-8  md:h-8 text-gray-800" />
+    </button>
+
+    {/* Card Container */}
+    <div
+      ref={containerRef}
+      className="w-full md:w-[90%] h-full  overflow-hidden relative flex scroll-smooth  md:flex"
+    >
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          className="flex flex-col md:flex-row flex-shrink-0 w-full rounded-3xl bg-white/20 backdrop-blur-md shadow-2xl overflow-hidden transition-all duration-500"
+          style={{ height: '100%' }}
+        >
+          {/* Left - Image Section */}
+          <div className="w-full md:w-1/2 h-[40%] md:h-full relative">
+            <img
+              src={card.image}
+              alt={card.title}
+              className="w-full h-full object-cover  object-center"
+            />
+            <Quote className="absolute text-[250px] text-white opacity-10 right-4 bottom-[-40px] z-0 pointer-events-none" />
+          </div>
+
+          {/* Right - Text Section */}
+          <div className="w-full md:w-1/2 h-full p-4 md:p-6 flex flex-col justify-center relative space-y-3 text-center md:text-left bg-white text-black text-xl font-semibold backdrop-blur-sm overflow-y-auto">
+            <h3 className="text-lg md:text-2xl font-bold flex items-center text-cyan-400 gap-3 justify-center md:justify-start">
+              <FaQuoteLeft className="w-8 h-8 text-white bg-cyan-400 p-2 rounded-full" />
+              {card.title}
+            </h3>
+            <p className="text-gray-700 text-xs md:text-sm px-2 md:px-0">{card.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Right Arrow */}
+    <button
+      onClick={handleNext}
+      className="absolute right-2 md:right-4 z-20 bg-white/30 hover:bg-cyan-500 transition-all duration-500 p-2 rounded-full shadow-md backdrop-blur-sm"
+    >
+      <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-gray-800" />
+    </button>
+  </div>
+</div>
+
+
+
   </div>
 </div>
 
