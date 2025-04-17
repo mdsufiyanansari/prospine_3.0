@@ -2,7 +2,6 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   FaCheckCircle,
-  FaArrowRight,
   FaFacebookF,
   FaLinkedinIn,
   FaInstagram,
@@ -11,18 +10,19 @@ import {
 import { IoClose } from "react-icons/io5";
 import { HiShieldCheck } from "react-icons/hi";
 import { MdVideoCall } from "react-icons/md";
-import { Heart, BadgeCheck, ShieldCheck, ThumbsUp } from 'lucide-react';
-import { useInView } from 'react-intersection-observer';
-import CountUp from 'react-countup'; // Make sure this package is installed
+import { Heart, BadgeCheck, ShieldCheck, ThumbsUp } from "lucide-react";
+import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
+import { motion } from "framer-motion"; // ✅ Framer Motion import
 
 const AboutUsBanner = () => {
   const navigate = useNavigate();
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
 
-  // ✅ Move useInView hook to the top level
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
+  const fadeUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   return (
     <>
@@ -49,14 +49,28 @@ const AboutUsBanner = () => {
         </div>
 
         <div className="relative z-10 flex flex-col justify-center items-center h-full text-cyan-400 text-center">
-          <h1 className="text-5xl text-white md:text-6xl font-bold mb-4">About Us</h1>
-          <div className="text-sm md:text-base">
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            transition={{ duration: 1 }}
+            className="text-5xl text-white md:text-6xl font-bold mb-4"
+          >
+            About Us
+          </motion.h1>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            transition={{ duration: 1.2 }}
+            className="text-sm md:text-base"
+          >
             <Link to="/" className="text-white font-semibold hover:underline">
               Home
             </Link>
             <span className="mx-2 text-white font-bold">›</span>
             <span>About Us</span>
-          </div>
+          </motion.div>
         </div>
 
         <div className="absolute top-[94%] right-6 bg-cyan-500 rounded-full shadow-xl px-6 py-4 border-8 border-white flex items-center space-x-3 text-cyan-600 text-lg font-semibold z-10">
@@ -69,15 +83,19 @@ const AboutUsBanner = () => {
 
       {/* About Section */}
       <section className="bg-white py-16 px-6 md:px-20 flex flex-col lg:flex-row items-center justify-center gap-10">
-        {/* Left Image */}
-        <div className="relative w-full h-[500px] max-w-md">
+        <motion.div
+          className="relative w-full h-[500px] max-w-md"
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
           <img
             src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"
             alt="Main Doctor"
             className="rounded-3xl object-cover shadow-xl h-full"
           />
-
-          {/* Video Call Box */}
           <div className="hidden lg:flex absolute w-[300px] top-40 h-[300px] -left-48 bg-white shadow-xl rounded-3xl overflow-hidden">
             <div className="w-[10%] text-white text-xl font-bold px-2 bg-blue-950">
               <h1 className="-rotate-90 md:mt-28">SUPPORT</h1>
@@ -103,10 +121,17 @@ const AboutUsBanner = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right Text */}
-        <div className="flex-1 max-w-2xl">
+        {/* Right text */}
+        <motion.div
+          className="flex-1 max-w-2xl"
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2 }}
+        >
           <div className="flex items-center gap-2 text-cyan-600 font-semibold mb-3">
             <HiShieldCheck size={20} />
             <span>Best Orthopaedics</span>
@@ -139,22 +164,29 @@ const AboutUsBanner = () => {
           <div className="flex flex-wrap gap-4 items-center">
             <Link to="/about_details">
               <button className="flex text-xl font-bold items-center gap-2 px-6 py-3 bg-cyan-500 text-white rounded-full shadow-md hover:bg-cyan-600 transition">
-                About us <FaArrowRight />
+                About us →
               </button>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </section>
 
-      {/* Experience & Why Choose Us Section */}
-      <section className="bg-[#0d1e38] text-white py-16 px-4 md:px-20 relative overflow-hidden">
+      {/* Why Choose Us Section */}
+      <motion.section
+        className="bg-[#0d1e38] text-white py-16 px-4 md:px-20 relative overflow-hidden"
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeUp}
+        viewport={{ once: true }}
+        transition={{ duration: 1.2 }}
+      >
         <div className="grid md:grid-cols-2 items-center gap-10">
-          {/* Left side */}
+          {/* Left side (Experience image + circle) */}
           <div className="relative space-y-6">
             <div className="flex gap-4 center">
               <div className="bg-white rounded-xl overflow-hidden shadow-md w-80 h-96">
                 <img
-                  src="https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=926&fit=clip"
+                  src="https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg"
                   alt="Doctor talking"
                   className="w-full h-full object-cover"
                 />
@@ -168,7 +200,8 @@ const AboutUsBanner = () => {
               </div>
             </div>
 
-            <div className="absolute top-[-40px] right-2 border-gray-500  border-2 rounded-full transform -translate-x-1/3">
+            {/* Rotating text and counter */}
+            <div className="absolute md:top-[-40px] md:right-2 right-[-48px] border-gray-500  border-2 rounded-full transform -translate-x-1/3">
               <div className="relative center md:w-72 md:h-72  h-28 w-28 ">
                 {/* SVG Text Circle */}
                 <svg
@@ -188,24 +221,21 @@ const AboutUsBanner = () => {
                     </textPath>
                   </text>
                 </svg>
-
-                {/* Counter Circle */}
                 <div
                   ref={ref}
                   className="md:w-56 md:h-56 h-20 w-20 rounded-full border-2 border-gray-500 text-center flex items-center justify-center"
                 >
                   <p className="md:text-7xl md:font-extrabold text-sm font-semibold text-gray-500">
-                    {inView && <CountUp end={21} duration={2} />}
-                    +
+                    {inView && <CountUp end={21} duration={2} />}+
                     <br />
-                    <span className="md:text-2xl md:font-bold text-sm text-cyan-400">YEAR</span>
+                    <span className="md:text-2xl text-sm text-cyan-400">YEAR</span>
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right side */}
+          {/* Right side (Why choose us) */}
           <div>
             <p className="text-cyan-400 font-medium flex items-center gap-2 uppercase text-sm mb-2">
               <ShieldCheck size={18} />
@@ -214,71 +244,55 @@ const AboutUsBanner = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-snug">
               Why Choose Us For Your <br /> Health Care Needs
             </h2>
-
             <div className="grid md:grid-cols-2 gap-4">
-              {/* Card 1 */}
-              <div className="bg-[#123054] p-5 rounded-xl shadow hover:shadow-lg transition">
-  <div className="flex items-center justify-between">
-    <BadgeCheck className="text-cyan-400" size={28} />
-    <span className="text-4xl text-white/10 font-bold">01</span>
-  </div>
-  <h3 className="text-lg font-semibold mt-4">Our Vision</h3>
-  <p className="text-sm text-white/80 mt-1">
-    We offer a range of health services to meet all your needs.
-  </p>
-  <Link
-    to="/details/vision"
-    className="inline-block mt-3 text-cyan-400 text-sm font-medium hover:underline"
-  >
-    Details →
-  </Link>
-</div>
-
-
-              {/* Card 2 */}
-              <div className="bg-[#123054] p-5 rounded-xl shadow hover:shadow-lg transition">
-                <div className="flex items-center justify-between">
-                  <Heart className="text-cyan-400" size={28} />
-                  <span className="text-4xl text-white/10 font-bold">02</span>
-                </div>
-                <h3 className="text-lg font-semibold mt-4">Our Mission</h3>
-                <p className="text-sm text-white/80 mt-1">
-                  We offer a range of health services to meet all your needs.
-                </p>
-                <Link
-    to="/details/mission"
-    className="inline-block mt-3 text-cyan-400 text-sm font-medium hover:underline"
-  >
-    Details →  
-  </Link>
-              </div>
-
-              {/* Card 3 */}
-              <div className="bg-[#123054] p-5 rounded-xl shadow hover:shadow-lg transition">
-                <div className="flex items-center justify-between">
-                  <ShieldCheck className="text-cyan-400" size={28} />
-                  <span className="text-4xl text-white/10 font-bold">03</span>
-                </div>
-                <h3 className="text-lg font-semibold mt-4">Pro Spine - Story</h3>
-                <p className="text-sm text-white/80 mt-1">
-                  We offer a range of health services to meet all your needs.
-                </p>
-
-                <Link
-    to="/details/story"
-    className="inline-block mt-3 text-cyan-400 text-sm font-medium hover:underline"
-  >
-    Details →  
-  </Link>
-              </div>
-
-              </div>
-
-             
-            
+              {[
+                {
+                  icon: <BadgeCheck className="text-cyan-400" size={28} />,
+                  title: "Our Vision",
+                  link: "/details/vision",
+                },
+                {
+                  icon: <Heart className="text-cyan-400" size={28} />,
+                  title: "Our Mission",
+                  link: "/details/mission",
+                },
+                {
+                  icon: <ShieldCheck className="text-cyan-400" size={28} />,
+                  title: "Pro Spine - Story",
+                  link: "/details/story",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  className="bg-[#123054] p-5 rounded-xl cursor-default shadow hover:shadow-lg   transition"
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={fadeUp}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 + i * 0.2 }}
+                >
+                  <div className="flex items-center  justify-between">
+                    {item.icon}
+                    <span className="text-4xl  text-white/10 font-bold">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-semibold mt-4">{item.title}</h3>
+                  <p className="text-sm text-white/80 mt-1">
+                    We offer a range of health services to meet all your needs.
+                  </p>
+                  <Link
+                    to={item.link}
+                    className="inline-block mt-3 cursor-pointer hover:scale-125 ease-in-out duration-500   text-cyan-400 text-sm font-medium hover:underline"
+                  >
+                    Details →
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };

@@ -16,7 +16,7 @@ const Navbar = () => {
     { name: 'About Us', to: '/about' },
     { name: 'Conditions We Treat', to: '/condition_we_treate' },
     { name: 'Our Services', to: '/services' },
-    { name: 'Our Team', to: '/contact' },
+    { name: 'Our Team', to: '/our_team' },
     { name: 'Testimonials', to: '/testimonials' },
     { name: 'Events', to: '/contact' },
     { name: 'Contact', to: '/contact' },
