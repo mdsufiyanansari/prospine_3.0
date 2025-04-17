@@ -10,6 +10,7 @@ import Testimonials from './pages/Testimonials';
 import Condition_we_treate from './pages/Condition_we_treate';
 import About_details from './Details/About_details';
 import DetailsPage from './Details/DetailsPage';
+import Our_Team from './pages/Our_Team';
 // import Custome_cursor from './cursor/Custome_cursor';
 
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/our_team" element={<Our_Team />} />
             <Route path="/appointment" element={<Appointment />} />
             <Route path="/condition_we_treate" element={<Condition_we_treate />} />
             <Route path="/testimonials" element={<Testimonials />} />
