@@ -6,6 +6,8 @@ import {
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const TeamHeader = () => {
   return (
@@ -34,11 +36,26 @@ const TeamHeader = () => {
 
         {/* Center Content */}
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-white text-center space-y-2">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold">Our Team</h1>
-          <p className="text-sm sm:text-lg font-semibold text-white">
-            Home <span className="text-cyan-400 px-1">&gt;&gt;</span>{" "}
+          <motion.h1
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl sm:text-5xl lg:text-7xl font-bold"
+          >
+            Our Team
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-sm sm:text-lg font-semibold text-white"
+          >
+            <Link to="/" className="hover:underline">
+              Home
+            </Link>{" "}
+            <span className="text-cyan-400 px-1">&gt;&gt;</span>
             <span className="text-cyan-400"> Team</span>
-          </p>
+          </motion.p>
         </div>
 
         {/* Call Button */}
@@ -55,21 +72,19 @@ const TeamHeader = () => {
       {/* Doctor Cards */}
       <div className="flex flex-wrap justify-center items-center gap-6 py-7 px-4">
         {[
-          {
-            name: "Dr. Arun Kumar",
-          },
-          {
-            name: "Dr. Mahender Naidu Crureez",
-          },
-          {
-            name: "Dr. Ranjan Kumar",
-          },
+          { name: "Dr. Arun Kumar" },
+          { name: "Dr. Mahender Naidu Crureez" },
+          { name: "Dr. Ranjan Kumar" },
           {
             name: "Dr. Pranav Kumar",
             title: "Consulatant Physical Theraoist",
           },
         ].map((doc, index) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
             key={index}
             className="h-auto w-full sm:w-[45%] lg:w-[22%] bg-transparent group flex flex-col items-center"
           >
@@ -79,12 +94,17 @@ const TeamHeader = () => {
                 alt="Doctor"
                 className="h-full w-full object-cover"
               />
-              <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 center flex gap-6 sm:gap-10 w-56 sm:w-64 h-16 sm:h-20 bg-cyan-400 text-white font-bold text-xl sm:text-2xl rounded-full transition-all duration-500 ease-in-out group-hover:bottom-6 items-center justify-center">
+              <motion.div
+                initial={{ y: 100, opacity: 0 }}
+                whileHover={{ y: 0, opacity: 1 }}
+                transition={{ type: "spring", stiffness: 120 }}
+                className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 center flex gap-6 sm:gap-10 w-56 sm:w-64 h-16 sm:h-20 bg-cyan-400 text-white font-bold text-xl sm:text-2xl rounded-full transition-all duration-500 ease-in-out group-hover:bottom-6 items-center justify-center"
+              >
                 <FaFacebookF className="hover:text-blue-400 cursor-pointer" />
                 <FaTwitter className="hover:text-sky-400 cursor-pointer" />
                 <FaLinkedinIn className="hover:text-blue-500 cursor-pointer" />
                 <FaInstagram className="hover:text-pink-400 cursor-pointer" />
-              </div>
+              </motion.div>
             </div>
             <p className="mt-2 text-xl sm:text-2xl font-bold text-blue-950 text-center">
               {doc.name}
@@ -94,7 +114,7 @@ const TeamHeader = () => {
                 </span>
               )}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -127,8 +147,12 @@ const TeamHeader = () => {
               "Great things happen when we work together. Pro Spine's team thrives on trust, collaboration, and a shared commitment to excellence in spine care",
           },
         ].map((member, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
             className="w-full md:w-[90%] lg:w-[40%] flex flex-col sm:flex-row items-center border-b-2 border-cyan-400 rounded-b-xl p-4 gap-4"
           >
             <div className="w-full sm:w-[30%] h-52 sm:h-full">
@@ -142,7 +166,7 @@ const TeamHeader = () => {
               <h1 className="text-xl sm:text-2xl font-bold text-blue-950">{member.name}</h1>
               <p className="text-base sm:text-lg font-semibold text-black">{member.quote}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </>
