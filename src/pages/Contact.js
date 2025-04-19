@@ -137,9 +137,11 @@ const TeamHeader = () => {
             src={pandaAnimation}
             style={{ height: "150px", width: "150px", marginBottom: "-15px" }}
           />
+          <Link to="/appointment">
           <button className="bg-cyan-500 py-4 px-6 text-lg sm:text-xl text-white font-bold tracking-wider rounded-full hover:scale-95 transition-all duration-300 shadow-md shadow-cyan-400">
             Appointment
           </button>
+          </Link>
         </motion.div>
       </motion.div>
 
