@@ -10,6 +10,25 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const TeamHeader = () => {
+  const doctors = [
+    {
+      name: "Dr. Sneha Roy",
+      title: "Spine Specialist",
+    },
+    {
+      name: "Dr. Aryan Sharma",
+      title: "Orthopedic Consultant",
+    },
+    {
+      name: "Dr. Nisha Verma",
+      title: "Pain Management Expert",
+    },
+    {
+      name: "Dr. Rahul Menon",
+      title: "Neuro-Spine Surgeon",
+    },
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -70,35 +89,29 @@ const TeamHeader = () => {
       </div>
 
       {/* Doctor Cards */}
-      <div className="flex flex-wrap justify-center items-center gap-6 py-7 px-4">
-        {[
-          { name: "Dr. Arun Kumar" },
-          { name: "Dr. Mahender Naidu Crureez" },
-          { name: "Dr. Ranjan Kumar" },
-          {
-            name: "Dr. Pranav Kumar",
-            title: "Consulatant Physical Theraoist",
-          },
-        ].map((doc, index) => (
+      <div className="flex flex-wrap justify-center items-center mt-8 gap-6 py-7 px-4">
+        {doctors.map((doc, index) => (
           <motion.div
+            key={index}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            key={index}
-            className="h-auto w-full sm:w-[45%] lg:w-[22%] bg-transparent group flex flex-col items-center"
+            className="h-auto w-full sm:w-[45%] lg:w-[22%] bg-transparent flex flex-col items-center group"
           >
-            <div className="relative w-full h-[350px] overflow-hidden rounded-xl">
+            <div className="relative w-full h-[380px] overflow-hidden rounded-xl group">
               <img
                 src="https://png.pngtree.com/png-clipart/20240406/original/pngtree-beautiful-female-doctor-photo-png-image_14764634.png"
                 alt="Doctor"
                 className="h-full w-full object-cover"
               />
+
+              {/* ICON WRAPPER */}
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 whileHover={{ y: 0, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 120 }}
-                className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 center flex gap-6 sm:gap-10 w-56 sm:w-64 h-16 sm:h-20 bg-cyan-400 text-white font-bold text-xl sm:text-2xl rounded-full transition-all duration-500 ease-in-out group-hover:bottom-6 items-center justify-center"
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-6 sm:gap-10 w-56 sm:w-64 h-16 sm:h-20 bg-cyan-400 text-black font-bold text-xl sm:text-2xl rounded-full items-center justify-center opacity-0 group-hover:opacity-100 z-10 pointer-events-auto transition-opacity duration-300"
               >
                 <FaFacebookF className="hover:text-blue-400 cursor-pointer" />
                 <FaTwitter className="hover:text-sky-400 cursor-pointer" />
@@ -106,6 +119,7 @@ const TeamHeader = () => {
                 <FaInstagram className="hover:text-pink-400 cursor-pointer" />
               </motion.div>
             </div>
+
             <p className="mt-2 text-xl sm:text-2xl font-bold text-blue-950 text-center">
               {doc.name}
               {doc.title && (
@@ -120,32 +134,19 @@ const TeamHeader = () => {
 
       {/* Team Details */}
       <div className="h-auto py-8 px-4 flex flex-col items-center gap-6 border-t-2 border-cyan-400">
-        <h1 className="text-2xl sm:text-3xl font-bold text-blue-950 text-center">Our Team</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-blue-950 text-center">
+          Our Team
+        </h1>
         <p className="text-base sm:text-lg font-semibold text-center text-black max-w-2xl">
-          Our expert specialists provide advanced, non-surgical spinal care with a patient-first approach. Dedicated to your well-being, we ensure personalized treatment for lasting relief.
+          Our expert specialists provide advanced, non-surgical spinal care
+          with a patient-first approach. Dedicated to your well-being, we
+          ensure personalized treatment for lasting relief.
         </p>
 
-        {[
-          {
-            name: "Arun Kumar",
-            quote:
-              "Pro Spine's strength lies in the unity of our team. Together, we take on challenges, celebrate victories, and continue to grow as one",
-          },
-          {
-            name: "Mahender Naidu Crureez",
-            quote:
-              "Together, we go further. At Pro Spine, our team's shared vision and mutual support drive us to deliver innovative and exceed expectations",
-          },
-          {
-            name: "Ranjan Kumar",
-            quote:
-              "Pro Spine's success is built on the strength of our collaborative spirit. We unite our skills and passion to deliver exceptional outcomes for our clients.",
-          },
-          {
-            name: "Dr. Pranav Kumar - Consultant Physical Therapist",
-            quote:
-              "Great things happen when we work together. Pro Spine's team thrives on trust, collaboration, and a shared commitment to excellence in spine care",
-          },
+        {[{ name: "Arun Kumar", quote: "Pro Spine's strength lies in the unity of our team..." },
+          { name: "Mahender Naidu Crureez", quote: "Together, we go further. At Pro Spine..." },
+          { name: "Ranjan Kumar", quote: "Pro Spine's success is built on the strength of our collaborative spirit..." },
+          { name: "Dr. Pranav Kumar - Consultant Physical Therapist", quote: "Great things happen when we work together..." }
         ].map((member, index) => (
           <motion.div
             key={index}
@@ -163,8 +164,12 @@ const TeamHeader = () => {
               />
             </div>
             <div className="w-full sm:w-[70%]">
-              <h1 className="text-xl sm:text-2xl font-bold text-blue-950">{member.name}</h1>
-              <p className="text-base sm:text-lg font-semibold text-black">{member.quote}</p>
+              <h1 className="text-xl sm:text-2xl font-bold text-blue-950">
+                {member.name}
+              </h1>
+              <p className="text-base sm:text-lg font-semibold text-black">
+                {member.quote}
+              </p>
             </div>
           </motion.div>
         ))}
