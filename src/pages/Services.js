@@ -20,55 +20,55 @@ const treatments = [
   {
     title: "Non-Invasive Robotic Spinal Decompression",
     desc: "Reduces pressure on spinal discs and nerves with AI-controlled robotic precision.",
-    icon: <Bot className="w-6 h-6 text-cyan-500" />,
+    icon: <Bot className="w-6 h-6 text-white" />,
     image: "https://technomedelectronics.com/assets/img/products/spinal-decompression-therapy/robospine-100/main.jpg"
   },
   {
     title: "Combination Therapy (Ultrasound + Currents)",
     desc: "Reduces pain and inflammation while enhancing tissue healing and circulation.",
-    icon: <Waves className="w-6 h-6 text-cyan-500" />,
+    icon: <Waves className="w-6 h-6 text-white" />,
     image: "https://5.imimg.com/data5/SELLER/Default/2022/3/XN/CM/FL/141043912/chattanooga-combination-therapy.jpg"
   },
   {
     title: "Shock Wave Therapy",
     desc: "Breaks down scar tissue and promotes regeneration for pain relief.",
-    icon: <Sparkles className="w-6 h-6 text-cyan-500" />,
+    icon: <Sparkles className="w-6 h-6 text-white" />,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqWP4YwWxzjjWy-4E_dzhpVdIciJiTPdC7GA&s"
   },
   {
     title: "LASER Therapy",
     desc: "Stimulates cell repair for chronic pain, disc degeneration, and nerve healing.",
-    icon: <Radiation className="w-6 h-6 text-cyan-500" />,
+    icon: <Radiation className="w-6 h-6 text-white" />,
     image: "https://sa1s3optim.patientpop.com/assets/images/provider/photos/2641021.jpg"
   },
   {
     title: "Dual Frequency Ultrasound Therapy",
     desc: "Deep tissue penetration that effectively reduces inflammation.",
-    icon: <ScanLine className="w-6 h-6 text-cyan-500" />,
+    icon: <ScanLine className="w-6 h-6 text-white" />,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-Ms6CTWbSe5G9e9qbwhskjvjZkP9xasK95Q&s"
   },
   {
     title: "IFT & Advanced TENS Therapy",
     desc: "Provides deep pain relief while stimulating muscle function.",
-    icon: <SignalHigh className="w-6 h-6 text-cyan-500" />,
+    icon: <SignalHigh className="w-6 h-6 text-white" />,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq9Fj8T1WJ0hHf2UFN7YQGHwUkWwv3A5TikA&s"
   },
   {
     title: "Short Wave Diathermy",
     desc: "Effective for arthritis, joint pain, and muscle stiffness.",
-    icon: <Power className="w-6 h-6 text-cyan-500" />,
+    icon: <Power className="w-6 h-6 text-white" />,
     image: "https://goodhandspt.com/wp-content/uploads/2023/03/SWD.png"
   },
   {
     title: "Harness System with Treadmill",
     desc: "Supports spinal rehabilitation and posture correction.",
-    icon: <Accessibility className="w-6 h-6 text-cyan-500" />,
+    icon: <Accessibility className="w-6 h-6 text-white" />,
     image: "https://www.hpcosmos.com/sites/default/files/styles/produktbild/public/uploads/images/pluto_robowalk_arm_support/20170228_cos30026_h-p-cosmos_pluto_med_sh_mw_re_as_web_01.jpg?itok=x8AtZAMd"
   },
   {
     title: "Spinal Decompression Therapy",
     desc: "Provides targeted relief by reducing pressure on discs and nerves.",
-    icon: <Activity className="w-6 h-6 text-cyan-500" />,
+    icon: <Activity className="w-6 h-6 text-white" />,
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfrY60TXSCZd_bf4pDw5CUQBhBphyObbE3iw&s"
   },
 ];
@@ -172,7 +172,7 @@ const Services = () => {
     </section>
 
    {/* advance tech section  */}
-   <div className="min-h-screen  border-t-2 py-12 px-4">
+   <div className="min-h-screen bg-gradient-to-tr from-cyan-50 to-cyan-200 to-cyan-50  border-t-2 py-12 px-4">
       <h1 className="text-3xl md:text-5xl font-bold text-center text-cyan-950 mb-12">
         Advanced Technology Treatments
       </h1>
@@ -181,10 +181,10 @@ const Services = () => {
         {treatments.map((item, index) => (
           <div
             key={index}
-            className="w-full md:w-[47%] lg:w-[30%] bg-cyan-400 rounded-xl p-4 shadow-xl hover:scale-[1.02] transition-transform duration-300"
+            className="w-full md:w-[47%] lg:w-[30%] bg-white rounded-xl p-4 shadow-xl hover:scale-[1.02] transition-transform duration-300"
           >
-            <div className="flex items-start gap-4 mb-3">
-              <div className="bg-white p-2 rounded-full">{item.icon}</div>
+            <div className="flex items-start gap-4  mb-3">
+              <div className="bg-gradient-to-tr from-cyan-200 to-cyan-100  p-2 rounded-full">{item.icon}</div>
               <h2 className="text-lg font-bold text-cyan-950">{item.title}</h2>
             </div>
 
@@ -192,7 +192,7 @@ const Services = () => {
               <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
             </div>
 
-            <p className="text-gray-200 text-sm">{item.desc}</p>
+            <p className="text-gray-700 text-sm">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -200,12 +200,12 @@ const Services = () => {
 
     {/* ////////manual therapy section ////////// */}
     <div className="min-h-screen flex items-center justify-center py-16 px-4">
-      <div className="max-w-6xl w-full bg-white/80 backdrop-blur-xl rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.2)] p-10 md:p-16">
+      <div className="max-w-6xl w-full bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl shadow-cyan-50 p-10 md:p-16">
         <motion.h2
           initial="hidden"
           animate="visible"
           variants={fadeUp}
-          className="text-3xl md:text-5xl font-extrabold text-center text-cyan-500 mb-12"
+          className="text-3xl md:text-5xl font-extrabold text-center text-cyan-950 mb-12"
         >
           Advanced Manual Therapy Techniques
         </motion.h2>
@@ -218,7 +218,7 @@ const Services = () => {
             viewport={{ once: true }}
             custom={1}
             variants={fadeUp}
-            className="px-6 py-3 bg-cyan-500 text-white font-semibold rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
+            className="px-6 py-3 bg-gradient-to-tr from-cyan-200 to-cyan-100 to-cyan-50 text-cyan-800 text-xl shadow-cyan-100 font-bold rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
           >
             Maitland Method
           </motion.div>
@@ -229,7 +229,7 @@ const Services = () => {
             viewport={{ once: true }}
             custom={2}
             variants={fadeUp}
-            className="px-6 py-3 cursor-pointer bg-cyan-500 text-white font-semibold rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
+            className="px-6 py-3 cursor-pointer bg-gradient-to-tr from-cyan-200 to-cyan-100 to-cyan-50 text-cyan-800 text-xl shadow-cyan-100 font-bold rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
           >
             McKenzie Method
           </motion.div>
@@ -240,7 +240,7 @@ const Services = () => {
             viewport={{ once: true }}
             custom={3}
             variants={fadeUp}
-            className="px-6 py-3 cursor-pointer bg-cyan-500 text-white font-semibold rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
+            className="px-6 py-3 cursor-pointer bg-gradient-to-tr from-cyan-200 to-cyan-100 to-cyan-50 text-cyan-800 text-xl shadow-cyan-100 font-bold rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
           >
             Mulligan Concept
           </motion.div>
@@ -251,7 +251,7 @@ const Services = () => {
             viewport={{ once: true }}
             custom={4}
             variants={fadeUp}
-            className="px-6 py-3 cursor-pointer bg-cyan-500 text-white font-semibold rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
+            className="px-6 py-3 cursor-pointer bg-gradient-to-tr from-cyan-200 to-cyan-100 to-cyan-50 text-cyan-800 text-xl shadow-cyan-100 font-bold rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
           >
             Cyriax Method
           </motion.div>
@@ -265,7 +265,7 @@ const Services = () => {
             viewport={{ once: true }}
             custom={5}
             variants={fadeUp}
-            className="aspect-square cursor-pointer flex items-center justify-center text-center bg-cyan-500 text-white font-semibold rounded-full shadow-xl p-6 hover:scale-105 transition-transform duration-300"
+            className="aspect-square cursor-pointer flex items-center justify-center text-center bg-gradient-to-tr from-cyan-200 to-cyan-100 to-cyan-50 text-cyan-800 text-xl shadow-cyan-100 font-bold rounded-full shadow-xl p-6 hover:scale-105 transition-transform duration-300"
           >
             Neurodynamic Techniques
           </motion.div>
@@ -276,7 +276,7 @@ const Services = () => {
             viewport={{ once: true }}
             custom={6}
             variants={fadeUp}
-            className="aspect-square flex items-center justify-center text-center bg-cyan-500 text-white font-semibold rounded-full shadow-xl cursor-pointer p-6 hover:scale-105 transition-transform duration-300"
+            className="aspect-square flex items-center justify-center text-center bg-gradient-to-tr from-cyan-200 to-cyan-100 to-cyan-50 text-cyan-800 text-xl shadow-cyan-100 font-bold rounded-full shadow-xl cursor-pointer p-6 hover:scale-105 transition-transform duration-300"
           >
             Myofascial Release
           </motion.div>
@@ -287,7 +287,7 @@ const Services = () => {
             viewport={{ once: true }}
             custom={7}
             variants={fadeUp}
-            className="aspect-square flex items-center justify-center text-center bg-cyan-500 text-white font-semibold rounded-full shadow-xl cursor-pointer p-6 hover:scale-105 transition-transform duration-300"
+            className="aspect-square flex items-center justify-center text-center bg-gradient-to-tr from-cyan-200 to-cyan-100 to-cyan-50 text-cyan-800 text-xl shadow-cyan-100 font-bold rounded-full shadow-xl cursor-pointer p-6 hover:scale-105 transition-transform duration-300"
           >
             Muscle Energy Techniques
           </motion.div>
@@ -298,7 +298,7 @@ const Services = () => {
             viewport={{ once: true }}
             custom={8}
             variants={fadeUp}
-            className="aspect-square flex items-center justify-center text-center bg-cyan-500 text-white font-semibold rounded-full shadow-xl cursor-pointer p-6 hover:scale-105 transition-transform duration-300"
+            className="aspect-square flex items-center justify-center text-center bg-gradient-to-tr from-cyan-200 to-cyan-100 to-cyan-50 text-cyan-800 text-xl shadow-cyan-100 font-bold rounded-full shadow-xl cursor-pointer p-6 hover:scale-105 transition-transform duration-300"
           >
             Energy Conservation Techniques
           </motion.div>
