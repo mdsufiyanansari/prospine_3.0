@@ -8,6 +8,11 @@ import Contact from './pages/Contact';
 import Appointment from './pages/Appointment';
 import Testimonials from './pages/Testimonials';
 import Condition_we_treate from './pages/Condition_we_treate';
+import About_details from './Details/About_details';
+import DetailsPage from './Details/DetailsPage';
+import Our_Team from './pages/Our_Team';
+import Events from './pages/Events';
+import Career from './pages/Career';
 // import Custome_cursor from './cursor/Custome_cursor';
 
 
@@ -25,9 +30,14 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/our_team" element={<Our_Team />} />
             <Route path="/appointment" element={<Appointment />} />
             <Route path="/condition_we_treate" element={<Condition_we_treate />} />
             <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/about_details" element={<About_details />} />
+            <Route path="/details/:topic" element={<DetailsPage />} />
             
           </Routes>
         </main>

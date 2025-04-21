@@ -13,14 +13,14 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', to: '/' },
-    { name: 'About Us', to: '/about us' },
+    { name: 'About Us', to: '/about' },
     { name: 'Conditions We Treat', to: '/condition_we_treate' },
     { name: 'Our Services', to: '/services' },
-    { name: 'Our Team', to: '/contact' },
+    { name: 'Our Team', to: '/our_team' },
     { name: 'Testimonials', to: '/testimonials' },
-    { name: 'Events', to: '/contact' },
+    { name: 'Events', to: '/events' },
     { name: 'Contact', to: '/contact' },
-    { name: 'Career', to: '/contact' },
+    { name: 'Career', to: '/career' },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="bg-white/30 backdrop-blur-md border-b border-white/20 shadow-sm fixed top-0 w-full z-50">
+      <nav className="bg-white border-b border-white/20 shadow-sm fixed top-0 w-full z-50">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -49,7 +49,7 @@ const Navbar = () => {
                 <Link
                   key={idx}
                   to={item.to}
-                  className={`transition ${isActive(item.to) ? 'text-blue-600 font-extrabold' : 'text-gray-700 hover:text-blue-600'}`}
+                  className={`transition ${isActive(item.to) ? 'text-cyan-600 font-extrabold' : 'text-gray-700 hover:text-cyan-600'}`}
                 >
                   {item.name}
                 </Link>
