@@ -25,6 +25,7 @@ function App() {
         {/* <Custome_cursor /> */}
         
         <Navbar />
+       
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
