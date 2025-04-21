@@ -1,27 +1,19 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
-
 import About_home from "../Details/About_home";
 import Counter from "../Details/Counter";
 import Service_home from "../Details/Service_home";
 import Appointment_home from "../Details/Appointment_home";
 import Spinalcare from "../Details/Spinalcare";
 import Treat_home from "../Details/Treat_home";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { PlayCircle } from "lucide-react";
-=======
-import { Phone, Mail, PhoneCall, MapPin } from "lucide-react";
-
 import { Link, useNavigate } from "react-router-dom";
-import { motion } from 'framer-motion';
-import { PlayCircle } from 'lucide-react';
-import { MdVideoCall } from 'react-icons/md';
-import { FaPhoneAlt, FaCheckCircle } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { PlayCircle, Phone, Mail, PhoneCall, MapPin } from "lucide-react";
+import { MdVideoCall } from "react-icons/md";
+import { FaPhoneAlt, FaCheckCircle } from "react-icons/fa";
 import { RiServiceFill } from "react-icons/ri";
-import { HiShieldCheck } from 'react-icons/hi';
-import { useInView } from 'react-intersection-observer';
-import CountUp from 'react-countup'; 
+import { HiShieldCheck } from "react-icons/hi";
+import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
 import {
   Bot,
   Waves,
@@ -41,7 +33,8 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { Player } from "@lottiefiles/react-lottie-player";
-import pandaAnimation from "../assets/panda.json"; 
+import pandaAnimation from "../assets/panda.json";
+
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -95,7 +88,6 @@ const therapies = [
       "Assists with postural correction and spinal rehabilitation through controlled movement therapy.",
   },
 ];
-
 
 const treatments = [
   {
@@ -154,34 +146,12 @@ const treatments = [
   },
 ];
 
-
-
->>>>>>> dc7d63eb66afe92a5de5d9fc60e06d60e98a81eb
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i = 1) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  }),
-};
-<<<<<<< HEAD
-=======
-
 const stats = [
   { value: 5, label: 'Happy Patients', suffix: 'K' },
   { value: 76, label: 'Specialists' },
   { value: 18, label: 'Surgeons' },
   { value: 24, label: 'Winning Awards' },
 ];
-
-
->>>>>>> dc7d63eb66afe92a5de5d9fc60e06d60e98a81eb
 
 const Home = () => {
   const [ref, inView] = useInView({ triggerOnce: true });
@@ -259,12 +229,7 @@ const Home = () => {
             </div>
 
             <p className="text-xl text-gray-800">
-<<<<<<< HEAD
-              Get top-notch healthcare solutions tailored to your needs. Your
-              health is our mission—book your appointment now.
-=======
               Get top-notch healthcare solutions tailored to your needs. Your health is our mission—book your appointment now.
->>>>>>> dc7d63eb66afe92a5de5d9fc60e06d60e98a81eb
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -298,27 +263,6 @@ const Home = () => {
             />
           </motion.div>
         </div>
-<<<<<<< HEAD
-      </div>
-
-      {/* About section */}
-      <About_home />
-
-      {/* Counter section */}
-      <Counter />
-
-      {/* Services section */}
-      <Service_home />
-
-      {/* Request and appointment section */}
-      <Appointment_home />
-
-      {/* Spinalcare section */}
-      <Spinalcare />
-
-      {/* Conditions we treat section */}
-      <Treat_home />
-=======
       </div>
 
       {/* About Us Section */}
@@ -327,7 +271,7 @@ const Home = () => {
           className="relative w-full h-[500px] max-w-md"
           initial="hidden"
           whileInView="visible"
-          variants={fadeUp}
+          variants={fadeInUp}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
@@ -368,7 +312,7 @@ const Home = () => {
           className="flex-1 max-w-2xl"
           initial="hidden"
           whileInView="visible"
-          variants={fadeUp}
+          variants={fadeInUp}
           viewport={{ once: true }}
           transition={{ duration: 1.2 }}
         >
@@ -493,7 +437,7 @@ const Home = () => {
           Reach Out to Start Your Journey to Better Health
         </h1>
         <p className="text-base sm:text-lg font-semibold text-black max-w-3xl shadow-md shadow-cyan-400">
-          We’re here to help! Give us a call, or share your number, and we’ll get in touch with you.
+          We're here to help! Give us a call, or share your number, and we'll get in touch with you.
         </p>
         <motion.div className="flex flex-col items-center space-y-2">
           <Player
@@ -667,8 +611,6 @@ const Home = () => {
       </div>
     </section>
  
-
->>>>>>> dc7d63eb66afe92a5de5d9fc60e06d60e98a81eb
     </>
   );
 };
