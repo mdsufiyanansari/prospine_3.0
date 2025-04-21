@@ -13,6 +13,7 @@ import DetailsPage from './Details/DetailsPage';
 import Our_Team from './pages/Our_Team';
 import Events from './pages/Events';
 import Career from './pages/Career';
+import Footer from './components/Footer';
 // import Custome_cursor from './cursor/Custome_cursor';
 
 
@@ -41,6 +42,8 @@ function App() {
             
           </Routes>
         </main>
+           
+           <Footer/>
       </div>
     </Router>
   );
