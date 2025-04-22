@@ -128,7 +128,7 @@ const TeamHeader = () => {
           Reach Out to Start Your Journey to Better Health
         </h1>
         <p className="text-base sm:text-lg font-semibold text-black max-w-3xl shadow-md shadow-cyan-400">
-          We’re here to help! Give us a call, or share your number, and we’ll get in touch with you.
+          We're here to help! Give us a call, or share your number, and we'll get in touch with you.
         </p>
         <motion.div className="flex flex-col items-center space-y-2">
           <Player

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import { Star } from 'lucide-react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -86,6 +87,8 @@ const Testimonials = () => {
       </div>
 
       <div className="mt-16 text-center">
+
+        <Link to="/testimonials">
         <motion.button
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -95,6 +98,7 @@ const Testimonials = () => {
         >
           Explore More Testimonials
         </motion.button>
+        </Link>
       </div>
 
       {/* Glowing background blobs */}

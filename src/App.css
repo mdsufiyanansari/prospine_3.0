@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+/* Add styles for dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Add styles for the theme toggle button */
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #e0e0e0;
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #333;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background-color: #444;
+}

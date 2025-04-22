@@ -294,8 +294,6 @@ const TestimonialHeader = () => {
 
       </div>
 
-    
- 
     </>
   );
 };
